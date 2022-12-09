@@ -22,7 +22,7 @@ JavaScript Todo List helps you create a list of things you want to do throughout
 ### Links
 
 - repository URL:(https://github.com/MIBKIRA/to-do-list-app)
-- Live Site URL: (https://mibkira.github.io/qr-code-component-main/)
+- Live Site URL: (https://mibkira.github.io/to-do-list-app/)
 
 ### Built with
 
