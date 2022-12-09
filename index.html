@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list app</title>
+    <!--link the font family
+    font family name is : Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--link the css file , file name is styles.css-->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!--create a main tag of class of app , this is where main file is going to go-->
+    <main class="app">
+        <!--create greetings section-->
+        <section class="greeting">
+            <h2 class="title">
+                <!-- create input tag to receive the user name-->
+                hello ! <input type="text" id="name" placeholder="name here">
+            </h2>
+        </section>
+        <!-- create new section to contain the added todo items -->
+        <section class="create-todo">
+            <h3> CREATE A TODO ITEM</h3>
+            <!--did not use the action feature to catch the submit event
+            Because I will be doing this process using javascript -->
+            <form id="new-todo-form">
+                <h4> what's on your todo list ?</h4>
+                <!--create a input tag to receive the todo item-->
+                <input 
+                    type="text"
+                    name="content"
+                    id="content"
+                    placeholder="e.g. Read 10 new pages from a book">
+                    <!-- select item priority part-->
+                    <h4>assign priority</h4>
+                    <!--the user will have two options to pick from-->
+                    <div class="options">
+                        <!-- the high priority one For emergencies and important stuff-->
+                        <label>
+                            <input
+                            type="radio"
+                            name="category"
+                            id="category1"
+                            value="high" />
+                            <span class="priority high"></span>
+                            <div>high priority</div>
+                        </label>
+
+                        <!--the normal priority one for normal things-->
+                        <label>
+                            <input
+                            type="radio"
+                            name="category"
+                            id="category2"
+                            value="normal" />
+                            <span class="priority normal"></span>
+                            <div>normal priority</div>
+                        </label>
+                    </div>
+
+                    <input type="submit" value="Add Todo Item" />
+            </form>
+        </section>
+        <!--the content of todo list part-->
+        <section class="todo-list">
+            <h3>TODO LIST</h3>
+            <div class="list" id="todo-list">
+                
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+    <!--link the javascript file 
+    file name : main.js 
+    If <script> tag is not added at end of the <body> tag,
+    DOM may not be ready by that time,
+    thus preventing javascript to work on it, leading to unknown behaviors.
+    Therefore, we should always add <script> tag at the end of the <body> tag to prevent unknown behaviors and make the webpage load faster.
+    DOM stand for Document Object Model-->
+    <script src="/app/main.js"></script>
+</body>
+</html>

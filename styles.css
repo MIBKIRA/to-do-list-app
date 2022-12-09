@@ -1,0 +1,264 @@
+    /*Adjust colors */
+:root {
+    --priority: #EA40A4;
+    --normal_priority:#3A82EE;
+    --high_priority: var(--priority);
+    --light: #EEE;
+    --grey: #888;
+    --dark: #313154;
+    --danger: #FF5B57;
+
+    --shadow: 0 1px rgba(0,0,0,0.1);
+
+    --normal_priority-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    --high_priority-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+    /*Modifications to the shape and font change for the mentioned font*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+    /*We set a condition to make the input look different*/
+input:not([type="radio"]):not([type="checkbox"]),button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+/*Here we use the variables we created before to change the colors*/
+body {
+    background: var(--light);
+    color: var(--dark);
+}
+
+/*Set margin and padding to create spacing between elements*/
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1..5;
+}
+
+/*adding styles to all h3 elements*/
+h3 {
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+/*adding styles to all h4 elements*/
+h4{
+    color: var(--grey);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/*setting the display flex to the greeting section & the title class*/
+.greeting .title {
+    display: flex;
+}
+
+/*to make them looks different we will add margin left and flex feature*/
+.greeting .title input {
+    margin-left: 0.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+/*now we adding some styles to the greeting class & to the title class but to the input feature only*/
+.greeting .title,
+.greeting .title input {
+    color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/*adding some styles to the input feature that are types of text type */
+.create-todo input[type="text"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+/*set display: grid; to specifies the number of options in a 2 grid layout  */
+.create-todo .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/*working on the label options */
+.create-todo .options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+/* we set display: none; to hide the radio & checkbox buttons because we don't want to see them*/
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+/*setting the all two optios's styles and change the color and display settings*/
+.priority {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--high_priority);
+    box-shadow: var(--high_priority-glow);
+}
+
+/*here we are checking if the priority is the normal priority and if it true we will set this settings*/
+.normal.priority {
+    border-color: var(--normal_priority);
+    box-shadow: var(--normal_priority-glow);
+}
+
+/* add in the check to check if they're checked
+then we adding the styles that will be displaed if does not checked yet*/
+.priority::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--high_priority);
+    box-shadow: var(--high_priority-glow);
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+/*change the color for the normal priority after checked */
+.priority.normal::after{
+    background-color: var(--normal_priority);
+    box-shadow: var(--normal_priority-glow);
+}
+
+/*toggle the input colores on*/
+input:checked ~ .priority::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+/*change the size of the options text and add margin*/
+.create-todo .options label div {
+    color: var(--dark);
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+
+/* turn the submit into a button*/
+.create-todo input[type="submit"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: #FFF;
+    background-color: var(--priority);
+    border-radius: 0.5rem;
+    box-shadow: var(--normal_priority-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+/*make effect on the submit button to looks different when we put the mouse on it*/
+.create-todo input[type="submit"]:hover {
+    opacity: 0.75;
+}
+/*add margin to give it some spacing around*/
+.todo-list .list {
+    margin: 1rem 0;
+}
+
+/*setup todo list items and add some styles on it to look like a bar to contains the content of the item*/
+.todo-list .todo-item {
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+/*trun the items to be a block level element,
+and add cursor:pointer to when you hover over it showing you can actually click it*/
+.todo-item label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+/*add 1 1 0% to make the delete and idit buttons spread across the bar */
+.todo-item .todo-content {
+    flex: 1 1 0%;
+}
+
+/*change the font size of the text of items to look bigger*/
+.todo-item .todo-content input {
+    color: var(--dark);
+    font-size: 1.125rem;
+}
+
+/*set display flex for todo item actions  to change the way it will looks later*/
+.todo-item .actions {
+    display: flex;
+    align-items: center;
+}
+
+/*setup button shape and color and transition effects*/
+.todo-item .actions button {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2 ease-in-out;
+}
+
+/*make effect on the action buttons (delete && edit) to looks different when we put the mouse on it*/
+.todo-item .actions button:hover {
+    opacity: 0.75;
+}
+
+/*change the color of the edit button to thevar(--priority
+and add margin-right: 0.5rem to give it some spacing around to keep it away from the delete button */
+.todo-item .actions .edit {
+    margin-right: 0.5rem;
+    background-color: var(--priority);
+}
+
+/*we don't need to give it a margin right because there is no any buttons to the right of it */
+.todo-item .actions .delete {
+    background-color: var(--danger);
+}
+
+/*add the done effect using the done class to make the items look Completely finished*/
+.todo-item.done .todo-content input {
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
