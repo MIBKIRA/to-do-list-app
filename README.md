@@ -13,7 +13,7 @@ This is my training project Which I built using HTML CSS JavaScript.
 
 ## Overview
 
-JavaScript Todo List helps you create a list of things you want to do throughout the day. Suppose you want to do something throughout the day that you can list here. Whenever you complete that task then you can delete it. And of coure you can edit it.
+JavaScript Todo List helps you create a list of things you want to do throughout the day. Suppose you want to do something throughout the day that you can list here. Whenever you complete that task then you can delete it. And of course you can edit it.
 
 ### Screenshot
 
